@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SiloWatch | Monitoramento</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <main class="dashboard">
+
+        <header class="topo">
+            <div class="identificacao">
+                <div class="logo">🌽</div>
+                <div>
+                    <h1>Silo experimental · Ponto P01</h1>
+                    <p class="subtitulo">Zeasense</p>
+                </div>
+            </div>
+
+            <div class="status-conexao">
+                <span>●</span> Demonstração
+            </div>
+        </header>
+
+        <div class="aviso">
+            ⚠ Dados simulados para desenvolvimento. Ainda não são
+            leituras do dispositivo físico.
+        </div>
+
+        <section class="cartoes">
+            <article class="cartao temperatura">
+                <h2>🌡️ Temperatura</h2>
+                <p class="valor">25,7 °C</p>
+            </article>
+
+            <article class="cartao umidade">
+                <h2>💧 Umidade relativa</h2>
+                <p class="valor">68,79%</p>
+            </article>
+
+            <article class="cartao tvoc">
+                <h2>〰️ TVOC</h2>
+                <p class="valor">132 <span class="unidade">µgm⁻³</span></p>
+            </article>
+
+            <article class="cartao eco2">
+                <h2>📈 eCO₂ (estimado)</h2>
+                <p class="valor">619 <span class="unidade">ppm</span></p>
+            </article>
+        </section>
+
+        <section class="historico">
+            <div class="controles">
+                <select id="periodo" aria-label="Período do histórico">
+                    <option value="12">Últimas 12 horas</option>
+                    <option value="24">Últimas 24 horas</option>
+                </select>
+
+                <button id="exportar">⇩ Exportar CSV</button>
+            </div>
+
+            <div class="grafico-container">
+                <h2>Histórico das medições</h2>
+
+                <div class="grafico-area">
+                    <canvas id="grafico"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <footer class="rodape">
+            SiloWatch · Protótipo em desenvolvimento
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

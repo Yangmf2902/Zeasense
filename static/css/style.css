@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #5f8058;
+    color: #f4f7ef;
+    min-height: 100vh;
+    padding: 28px;
+}
+
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 8px 30px;
+    border-bottom: 1px solid #91aa87;
+}
+
+.identificacao {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    background: #78966f;
+    border-radius: 16px;
+    font-size: 28px;
+}
+
+.topo h1 {
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.subtitulo {
+    color: #dce8d5;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.status-conexao {
+    background: #789c70;
+    color: #d8f8d0;
+    padding: 12px 22px;
+    border-radius: 30px;
+    white-space: nowrap;
+}
+
+.status-conexao span {
+    color: #8df0a0;
+}
+
+.aviso {
+    margin: 20px 0;
+    padding: 12px 16px;
+    border: 1px solid #d9c38b;
+    border-radius: 10px;
+    color: #fff1c5;
+    background: #718c61;
+}
+
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    padding: 18px 8px 40px;
+    border-bottom: 1px solid #91aa87;
+}
+
+.cartao {
+    background: #829d79;
+    border-radius: 22px;
+    padding: 24px;
+    min-height: 170px;
+}
+
+.cartao h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #f0f5eb;
+    margin-bottom: 25px;
+}
+
+.valor {
+    font-size: clamp(22px, 2.4vw, 35px);
+    white-space: nowrap;
+}
+
+.unidade {
+    font-size: 14px;
+    color: #e1eadb;
+}
+
+.temperatura { border-top: 4px solid #e8b34f; }
+.umidade { border-top: 4px solid #65cbd3; }
+.tvoc { border-top: 4px solid #c39ad9; }
+.eco2 { border-top: 4px solid #df9c8e; }
+
+.historico {
+    padding-top: 28px;
+}
+
+.controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+select, button {
+    font: inherit;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+select {
+    background: #829d79;
+    color: white;
+    min-width: 260px;
+}
+
+button {
+    background: #829d79;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #91ad86;
+}
+
+.grafico-container {
+    background: #829d79;
+    padding: 22px;
+    border-radius: 22px;
+}
+
+.grafico-container h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.grafico-area {
+    background: #f8faf6;
+    border-radius: 16px;
+    padding: 20px;
+    min-height: 300px;
+}
+
+#grafico {
+    width: 100%;
+    max-height: 420px;
+}
+
+.rodape {
+    color: #e0ead9;
+    font-size: 13px;
+    text-align: center;
+    padding: 22px;
+}
+
+@media (max-width: 900px) {
+    .cartoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 14px;
+    }
+
+    .topo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cartoes {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .cartao {
+        min-height: 140px;
+    }
+
+    .controles {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    select, button {
+        width: 100%;
+    }
+}
