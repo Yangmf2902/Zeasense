@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SiloWatch | Monitoramento</title>
+    <title>Zeasense | Monitoramento</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
@@ -47,12 +47,12 @@
 
             <article class="cartao tvoc">
                 <h2>〰️ TVOC</h2>
-                <p class="valor">132 <span class="unidade">µgm⁻³</span></p>
+                <p class="valor">132 µgm⁻³</p>
             </article>
 
             <article class="cartao eco2">
-                <h2>📈 eCO₂ (estimado)</h2>
-                <p class="valor">619 <span class="unidade">ppm</span></p>
+                <h2>📈 eCO₂</h2>
+                <p class="valor">619 ppm</p>
             </article>
         </section>
 
@@ -76,10 +76,10 @@
         </section>
 
         <footer class="rodape">
-            SiloWatch · Protótipo em desenvolvimento
+            Zeasense · Protótipo em desenvolvimento
         </footer>
     </main>
 
-    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/grafico.js') }}"></script>
 </body>
 </html>
